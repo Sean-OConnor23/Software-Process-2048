@@ -1,6 +1,6 @@
 applications:
   - path: .
-    name: umphrda-2048
+    name: sfo0002-2048
     environment_json: {}
     memory: 128M
     instances: 1
