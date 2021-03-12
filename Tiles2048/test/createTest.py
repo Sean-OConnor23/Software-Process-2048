@@ -27,7 +27,7 @@ class CreateTest(unittest.TestCase):
                 self.assertFalse(self)
             i = i + 1
         for count in listCount:
-            if (count > 3):
+            if (count >= 3):
                 self.assertFalse(self)
               
         self.assertTrue(self)
