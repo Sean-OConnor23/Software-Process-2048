@@ -1,11 +1,9 @@
 import unittest
 import Tiles2048.create as create
+from click.testing import Result
 
 class CreateTest(unittest.TestCase):
-
-#  The following is included only for illustrative purposes.  It tests nothing
-#  useful.  Please delete and replace with your own test code.    
-
+   
 #Tests that the grid value is randomly generate with two instances of 2    
     def test_create_HappyPathTest010(self):
         userParms = {'op': 'create', 'size': '4'}
@@ -46,11 +44,13 @@ class CreateTest(unittest.TestCase):
         status = action.get('status')
         expectedResult = 'ok'
         self.assertEqual(status, expectedResult)
+        
 #Tests the value of integrity 
     def test_create_HappyPathTest040(self):
-        userParms = {'op': 'create', 'size': '4'}
-        createDict = create._create(userParms)
-        
-        actualResult = createDict.get('integrity')
+        inputDict = {'grid': '0020000020000000', 'score': '0', 
+                        'integrity': '', 'status': 'ok'}        
+        expectedResult = "7CD5E3DEAB08FCAE8F64433DC4A63CC922571EBF60EE1D1938ADCD415FB760E5"       
+        actualResult = create._calcIntegrity(inputDict)
+        self.assertEqual(actualResult, expectedResult)
         
     

@@ -19,3 +19,7 @@ def _create(userParms):
     
                
     return result
+
+def _calcIntegrity(result):
+    grid = str(result.get('grid'))
+    
