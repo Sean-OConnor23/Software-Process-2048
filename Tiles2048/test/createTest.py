@@ -1,6 +1,5 @@
 import unittest
 import Tiles2048.create as create
-from click.testing import Result
 
 class CreateTest(unittest.TestCase):
    
