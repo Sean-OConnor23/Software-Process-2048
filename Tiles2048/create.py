@@ -15,11 +15,19 @@ def _create(userParms):
     newGrid = "".join(tempGrid)
     result['grid'] = newGrid
     
-    #Creates the integrity value of the grid 
-    
+    #Creates the integrity value of the grid using grid just created
+    result['integrity'] = _calcIntegrity(result)
                
     return result
 
+#Calculate integrity in separate grid. Helps for testing purposes
 def _calcIntegrity(result):
     grid = str(result.get('grid'))
+    score = str(result.get('score'))
+    toConvert = grid + "." + score
+    myHash = hashlib.sha256()
+    myHash.update(toConvert.encode())
+    myHashDigest = myHash.hexdigest()
+    return myHashDigest
+    
     
