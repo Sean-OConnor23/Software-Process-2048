@@ -13,13 +13,13 @@ class CreateTest(unittest.TestCase):
             tempGrid = tempResult.get('grid')
             if (tempGrid == ''):
                 self.assertFalse(self)
-            count = 0
+            listIndex = 0
             twoCount = 0
             for gridVal in tempGrid:
                 if (gridVal == '2'):
-                    listCount[count] = listCount[count] + 1
+                    listCount[listIndex] = listCount[listIndex] + 1
                     twoCount = twoCount + 1
-                count = count + 1
+                listIndex = listIndex + 1
             if (twoCount != 2):
                 self.assertFalse(self)
             i = i + 1
