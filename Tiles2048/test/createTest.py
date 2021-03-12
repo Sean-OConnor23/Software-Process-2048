@@ -34,5 +34,5 @@ class CreateTest(unittest.TestCase):
         userParms = {'op': 'create', 'size': '4'}
         action = create._create(userParms)
         status = action.get('status')
-        self.assertEqual(status, 'ok')
+        self.assertEqual(status, "ok")
     
