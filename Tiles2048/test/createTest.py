@@ -12,6 +12,8 @@ class CreateTest(unittest.TestCase):
         while (i < 16):
             tempResult = create._create(userParms)
             tempGrid = tempResult.get('grid')
+            if (tempGrid == ''):
+                self.assertFalse(self)
             count = 0
             for gridVal in tempGrid:
                 if (gridVal == '2'):
@@ -24,5 +26,16 @@ class CreateTest(unittest.TestCase):
                 
         self.assertTrue(self)
             
-    
+    def test_create_HappyPathTest020(self):
+        userParms = {'op': 'create', 'size': '4'}
+        action = create._create(userParms)
+        score = action.get('score')
+        self.assertEqual(score, 0)
+        
+    def test_create_HappyPathTest030(self):
+        userParms = {'op': 'create', 'size': '4'}
+        action = create._create(userParms)
+        status = action.get('status')
+        expectedResult = 'ok'
+        self.assertEqual(status, expectedResult)
     
