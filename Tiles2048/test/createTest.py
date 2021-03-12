@@ -18,7 +18,7 @@ class CreateTest(unittest.TestCase):
             twoCount = 0
             for gridVal in tempGrid:
                 if (gridVal == '2'):
-                    #listCount[count] = listCount[count] + 1
+                    listCount[count] = listCount[count] + 1
                     twoCount = twoCount + 1
                 count = count + 1
             if (twoCount != 2):
