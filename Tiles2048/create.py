@@ -3,7 +3,7 @@ def _create(userParms):
     twoCount = 0
     while (len(result.get('grid')) < 16):
         if(twoCount == 2):
-            result.get('grid') = result.get('grid') + "0"
+            result.get('grid') = result.get('grid') + 1
         else:
                
     return result
