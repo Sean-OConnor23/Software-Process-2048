@@ -30,10 +30,5 @@ class CreateTest(unittest.TestCase):
         score = action.get('score')
         self.assertEqual(score, 0)
         
-    def test_create_HappyPathTest030(self):
-        userParms = {'op': 'create', 'size': '4'}
-        action = create._create(userParms)
-        status = action.get('status')
-        expectedResult = 'ok'
-        self.assertEqual(status, expectedResult)
+    
     
