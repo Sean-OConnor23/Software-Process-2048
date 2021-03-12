@@ -4,15 +4,8 @@ import Tiles2048.create as create
 class CreateTest(unittest.TestCase):
 
 #  The following is included only for illustrative purposes.  It tests nothing
-#  useful.  Please delete and replace with your own test code.
+#  useful.  Please delete and replace with your own test code.        
     def test_create_HappyPathTest010(self):
-        userParms = {'op': 'create', 'size': '4'}
-        expectedResult = {'grid': '0020000020000000', 'score': '0', 'integrity': 
-                            '7CD5E3DEAB08FCAE8F64433DC4A63CC922571EBF60EE1D1938ADCD415FB760E5', 'status': 'ok'}
-        actualResult = create._create(userParms)
-        self.assertDictEqual(expectedResult, actualResult)
-        
-    def test_create_HappyPathTest020(self):
         userParms = {'op': 'create', 'size': '4'}
         listCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         i = 0
@@ -31,4 +24,15 @@ class CreateTest(unittest.TestCase):
                 
         self.assertTrue(self)
             
+    def test_create_HappyPathTest020(self):
+        userParms = {'op': 'create', 'size': '4'}
+        action = create._create(userParms)
+        score = action.get('score')
+        self.assertEqual(score, 0)
+        
+    def test_create_HappyPathTest030(self):
+        userParms = {'op': 'create', 'size': '4'}
+        action = create._create(userParms)
+        status = action.get('status')
+        self.assertEqual(status, 'ok')
     
