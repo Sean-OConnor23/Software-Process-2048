@@ -6,9 +6,10 @@ def _create(userParms):
     ranindexTwo = random.randint(0, 15)
     while (ranIndexOne == ranindexTwo):
         ranindexTwo = random.randint(0, 15)
-    tempGrid = str(result.get('grid'))
-    tempGrid.index(ranIndexOne) = '2'
-    tempGrid.index(ranindexTwo) = '2'
-    result.get('grid') = tempGrid
+    tempGrid = list(result.get('grid'))
+    tempGrid[ranIndexOne] = '2'
+    tempGrid[ranindexTwo] = '2'
+    newGrid = "".join(tempGrid)
+    result.get('grid') = newGrid
                
     return result
