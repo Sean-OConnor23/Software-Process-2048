@@ -15,15 +15,19 @@ class CreateTest(unittest.TestCase):
             if (tempGrid == ''):
                 self.assertFalse(self)
             count = 0
+            twoCount = 0
             for gridVal in tempGrid:
                 if (gridVal == '2'):
                     listCount[count] = listCount[count] + 1
+                    twoCount = twoCount + 1
                 count = count + 1
+            if (twoCount != 2):
+                self.assertFalse(self)
             i = i + 1
         for count in listCount:
             if (count > 4):
                 self.assertFalse(self)
-                
+              
         self.assertTrue(self)
             
     def test_create_HappyPathTest020(self):
