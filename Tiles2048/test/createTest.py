@@ -24,11 +24,5 @@ class CreateTest(unittest.TestCase):
                 
         self.assertTrue(self)
             
-    def test_create_HappyPathTest020(self):
-        userParms = {'op': 'create', 'size': '4'}
-        action = create._create(userParms)
-        score = action.get('score')
-        self.assertEqual(score, 0)
-        
     
     
