@@ -28,6 +28,6 @@ def _calcIntegrity(result):
     myHash = hashlib.sha256()
     myHash.update(toConvert.encode())
     myHashDigest = myHash.hexdigest()
-    return myHashDigest
+    return myHashDigest.upper()
     
     
