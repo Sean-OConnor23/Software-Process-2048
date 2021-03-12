@@ -1,7 +1,10 @@
 import random
+import hashlib
 
 def _create(userParms):
     result = {'grid': '0000000000000000', 'score': '0', 'integrity': '', 'status': 'ok'}
+    
+    #Creates the grid with two instances of the number 2 randomly placed within the grid
     ranIndexOne = random.randint(0, 15)
     ranindexTwo = random.randint(0, 15)
     while (ranIndexOne == ranindexTwo):
@@ -11,5 +14,8 @@ def _create(userParms):
     tempGrid[ranindexTwo] = '2'
     newGrid = "".join(tempGrid)
     result['grid'] = newGrid
+    
+    #Creates the integrity value of the grid 
+    
                
     return result

@@ -4,7 +4,9 @@ import Tiles2048.create as create
 class CreateTest(unittest.TestCase):
 
 #  The following is included only for illustrative purposes.  It tests nothing
-#  useful.  Please delete and replace with your own test code.        
+#  useful.  Please delete and replace with your own test code.    
+
+#Tests that the grid value is randomly generate with two instances of 2    
     def test_create_HappyPathTest010(self):
         userParms = {'op': 'create', 'size': '4'}
         listCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -25,21 +27,30 @@ class CreateTest(unittest.TestCase):
                 self.assertFalse(self)
             i = i + 1
         for count in listCount:
-            if (count > 4):
+            if (count > 3):
                 self.assertFalse(self)
               
         self.assertTrue(self)
-            
+         
+#Tests that the value of score is initialized correctly    
     def test_create_HappyPathTest020(self):
         userParms = {'op': 'create', 'size': '4'}
         action = create._create(userParms)
         score = action.get('score')
         self.assertEqual(score, '0')
         
+#Tests that the value of status is initialized correctly 
     def test_create_HappyPathTest030(self):
         userParms = {'op': 'create', 'size': '4'}
         action = create._create(userParms)
         status = action.get('status')
         expectedResult = 'ok'
         self.assertEqual(status, expectedResult)
+#Tests the value of integrity 
+    def test_create_HappyPathTest040(self):
+        userParms = {'op': 'create', 'size': '4'}
+        createDict = create._create(userParms)
+        
+        actualResult = createDict.get('integrity')
+        
     
