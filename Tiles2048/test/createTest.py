@@ -7,7 +7,7 @@ class CreateTest(unittest.TestCase):
 #  useful.  Please delete and replace with your own test code.        
     def test_create_HappyPathTest010(self):
         userParms = {'op': 'create', 'size': '4'}
-        listCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        listCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         i = 0
         while (i < 16):
             tempResult = create._create(userParms)
