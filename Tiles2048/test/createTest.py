@@ -54,7 +54,7 @@ class CreateTest(unittest.TestCase):
         self.assertEqual(actualResult, expectedResult)
         
 #Tests the value of integrity with different grid value        
-    def test_create_HappyPathTest040(self):
+    def test_create_HappyPathTest050(self):
         inputDict = {'grid': '2200000000000000', 'score': '0', 
                         'integrity': '', 'status': 'ok'}              
         expectedResult = "0C1E79CDC2D6D5FBA1A31203029C5D951EE92DBC87CB64BA80C41D58A2DE036E"     
