@@ -1,3 +1,3 @@
 def _create(userParms):
-    result = {'grid': ''}
+    result = {'grid': '', 'score': '0', 'integrity': '', 'status': 'ok'}
     return result
