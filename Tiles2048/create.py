@@ -10,6 +10,6 @@ def _create(userParms):
     tempGrid[ranIndexOne] = '2'
     tempGrid[ranindexTwo] = '2'
     newGrid = "".join(tempGrid)
-    result.get('grid') = newGrid
+    result['grid'] = newGrid
                
     return result
