@@ -47,11 +47,13 @@ class shiftTest(unittest.TestCase):
         self.assertEqual(actual, expected)
     #Tests for a valid direction 
     def test_shift_SadPathTest050(self):
-        userParms = {'op': 'shift', 'grid':'20002000000000', 'score': '0', 'direction': 'back', 
+        userParms = {'op': 'shift', 'grid':'0020000020000000', 'score': '0', 'direction': 'back', 
                         'integrity': '7CD5E3DEAB08FCAE8F64433DC4A63CC922571EBF60EE1D1938ADCD415FB760E5'}
         actual = shift._shift(userParms)
         expected = {'status': 'error: invalid direction'}
         self.assertEqual(actual, expected)
+               
+        
     #Tests to see if shift is avaliable 
     def test_shift_SadPathTest060(self):
         userParms = {'op': 'shift', 'grid':'2222222222222222', 'score': '0', 'direction': 'down', 
