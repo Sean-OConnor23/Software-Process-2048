@@ -3,7 +3,8 @@ import hashlib
 
 def _shift(userParms):
     result = userParms
-    if (('grid' in result) == False):
+    search = 'grid'
+    if (not search in result):
         error = {'status': 'error: missing grid'}
     grid = result.get('grid')
     direction = result.get('direction')
