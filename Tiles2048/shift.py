@@ -3,11 +3,12 @@ import hashlib
 
 def _shift(userParms):
     result = userParms
+    grid = str(result['grid'])
     direction = result['direction']
     if ((int(result['score'])) % 2 != 0):
         error = {'status': 'error: invalid score'}
         return error
-    if (len(str(result['grid'])) != 16):
+    if (len(grid) != 16):
         error = {'status': 'error: invalid grid'}
         return error
     
