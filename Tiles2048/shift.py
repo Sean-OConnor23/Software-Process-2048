@@ -3,7 +3,7 @@ import hashlib
 
 def _shift(userParms):
     result = userParms
-    grid = str(result['grid'])
+    grid = result.get('grid')
     direction = result['direction']
     if ((int(result['score'])) % 2 != 0):
         error = {'status': 'error: invalid score'}
