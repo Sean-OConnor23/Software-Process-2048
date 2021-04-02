@@ -7,6 +7,10 @@ def _shift(userParms):
     if ((int(result['score'])) % 2 != 0):
         error = {'status': 'error: invalid score'}
         return error
+    if (len(result['grid']) != 16):
+        error = {'status': 'error: invalid grid'}
+        return error
+    
     if (direction == 'up'):
         #Dictates which direction to break grid up into (columns here)
         print("success")
