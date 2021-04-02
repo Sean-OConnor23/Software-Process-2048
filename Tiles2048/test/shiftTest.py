@@ -15,6 +15,5 @@ class shiftTest(unittest.TestCase):
                         'integrity': '2A2EF0D1BEA22B9D6AB67C482BFF954F93F6A3617EF052E11DD8776BFFB7325A'}
         actual = shift._shift(userParms)
         self.assertEqual(actual.get('score'), '16') 
-        
-    def test_shift_SadPathTest010(self):
+
        
