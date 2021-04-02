@@ -6,6 +6,7 @@ def _shift(userParms):
     search = 'grid'
     if (not search in result):
         error = {'status': 'error: missing grid'}
+        return error
     grid = result.get('grid')
     direction = result.get('direction')
     if ((int(result['score'])) % 2 != 0):
