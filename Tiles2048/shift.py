@@ -1,6 +1,12 @@
+import random
+import hashlib
+
 def _shift(userParms):
     result = userParms
     direction = result['direction']
+    if ((result['score']) % 2 != 0):
+        error = {'error': 'invalid score'}
+        return error
     if (direction == 'up'):
         #Dictates which direction to break grid up into (columns here)
         print("success")
@@ -13,3 +19,14 @@ def _shift(userParms):
         
         
     return result
+
+
+#Calculate integrity in separate grid. Helps for testing purposes
+def _calcIntegrity(result):
+    grid = str(result.get('grid'))
+    score = str(result.get('score'))
+    toConvert = grid + "." + score
+    myHash = hashlib.sha256()
+    myHash.update(toConvert.encode())
+    myHashDigest = myHash.hexdigest()
+    return myHashDigest.upper()
