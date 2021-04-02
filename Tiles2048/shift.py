@@ -20,8 +20,11 @@ def _shift(userParms):
         if (not(int(tempVal) in validNum)):
             error = {'status': 'error: invalid grid'}
             return error
-    
-    
+    calcInteg = _calcIntegrity(result)
+    if (calcInteg != result.get('integrity')):
+        error = {'status' : 'error: bad integrity value'}
+        return error
+      
     if (direction == 'up' or direction == 'down' or not('direction' in result)):
         #Dictates which direction to break grid up into (columns here)
         
