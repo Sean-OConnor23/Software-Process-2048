@@ -8,8 +8,8 @@ class shiftTest(unittest.TestCase):
         userParms = {'op': 'shift', 'grid':'20002000000000', 'score': '0', 'direction': 'up', 
                         'integrity': '7CD5E3DEAB08FCAE8F64433DC4A63CC922571EBF60EE1D1938ADCD415FB760E5'}
         actual = shift._shift(userParms)
-        grid = actual.get('grid')
-        val = str(grid[0])
+        grid = str(actual.get('grid'))
+        val = grid[0]
         self.assertEqual(val, '4')          
         
     def test_shift_HappyPathTest020(self):
