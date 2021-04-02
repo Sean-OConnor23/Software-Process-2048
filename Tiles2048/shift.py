@@ -5,7 +5,7 @@ def _shift(userParms):
     result = userParms
     direction = result['direction']
     if ((result['score']) % 2 != 0):
-        error = {'error': 'invalid score'}
+        error = {'status': 'error: invalid score'}
         return error
     if (direction == 'up'):
         #Dictates which direction to break grid up into (columns here)
