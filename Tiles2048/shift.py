@@ -4,6 +4,7 @@ import hashlib
 def _shift(userParms):
     result = userParms
     search = 'grid'
+    validNum = [0, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048]
     if (not search in result):
         error = {'status': 'error: missing grid'}
         return error
@@ -15,17 +16,25 @@ def _shift(userParms):
     if (len(str(grid)) != 16):
         error = {'status': 'error: invalid grid'}
         return error
+    for tempVal in grid:
+        if (not(int(tempVal) in validNum)):
+            error = {'status': 'error: invalid grid'}
+            return error
+    
     
     if (direction == 'up' or direction == 'down' or not('direction' in result)):
         #Dictates which direction to break grid up into (columns here)
+        
+        
         print("success")
     elif (direction == 'right' or direction == 'left'):
         #Dictates which direction to break grid into (rows here)
+        
+        
         print("success")
     else:
         error = {'status': 'error: invalid direction'}
         return error
-        
         
     return result
 
