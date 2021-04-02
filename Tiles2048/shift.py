@@ -3,6 +3,8 @@ import hashlib
 
 def _shift(userParms):
     result = userParms
+    if (result.has_key('grid') == False):
+        error = {'status': 'error: missing grid'}
     grid = result.get('grid')
     direction = result.get('direction')
     if ((int(result['score'])) % 2 != 0):
