@@ -57,13 +57,13 @@ class shiftTest(unittest.TestCase):
     #Tests to see if shift is avaliable 
     def test_shift_SadPathTest060(self):
         userParms = {'op': 'shift', 'grid':'2222222222222222', 'score': '0', 'direction': 'down', 
-                        'integrity': '7CD5E3DEAB08FCAE8F64433DC4A63CC922571EBF60EE1D1938ADCD415FB760E5'}
+                        'integrity': '2A2EF0D1BEA22B9D6AB67C482BFF954F93F6A3617EF052E11DD8776BFFB7325A'}
         actual = shift._shift(userParms)
         expected = {'status': 'error: no shift possible'}
         self.assertEqual(actual, expected)
     #Tests for a good integrity value 
     def test_shift_SadPathTest070(self):
-        userParms = {'op': 'shift', 'grid':'0020002000002000', 'score': '0', 'direction': 'back', 
+        userParms = {'op': 'shift', 'grid':'002000002000000', 'score': '0', 'direction': 'back', 
                         'integrity': '7CD5E3DEAB08FCAE8F64433DC4AF60EE1D1938ADCD415FB760E5'}
         actual = shift._shift(userParms)
         expected = {'status': 'error: bad integrity value'}
