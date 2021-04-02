@@ -4,11 +4,11 @@ import hashlib
 def _shift(userParms):
     result = userParms
     grid = result.get('grid')
-    direction = result['direction']
+    direction = result.get('direction')
     if ((int(result['score'])) % 2 != 0):
         error = {'status': 'error: invalid score'}
         return error
-    if (len(grid) != 16):
+    if (len(str(grid)) != 16):
         error = {'status': 'error: invalid grid'}
         return error
     
