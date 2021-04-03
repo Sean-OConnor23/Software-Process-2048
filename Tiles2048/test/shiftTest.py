@@ -5,8 +5,8 @@ class shiftTest(unittest.TestCase):
     #reusing code for calculating hash256 from last assignment. 
     #Thus, we can assume its functionality is correct. 
     def test_shift_HappyPathTest010(self):
-        userParms = {'op': 'shift', 'grid':'20002000000000', 'score': '0', 'direction': 'up', 
-                        'integrity': '7CD5E3DEAB08FCAE8F64433DC4A63CC922571EBF60EE1D1938ADCD415FB760E5'}
+        userParms = {'op': 'shift', 'grid':'2000200000000000', 'score': '0', 'direction': 'up', 
+                        'integrity': '10469CE866023129A5BFB507A4D641F98C4566747136F24A920AA1C846844320'}
         actual = shift._shift(userParms)
         grid = str(actual.get('grid'))
         val = grid[0]
@@ -57,7 +57,7 @@ class shiftTest(unittest.TestCase):
     #Tests to see if shift is avaliable 
     def test_shift_SadPathTest060(self):
         userParms = {'op': 'shift', 'grid':'2222222222222222', 'score': '0', 'direction': 'down', 
-                        'integrity': '2A2EF0D1BEA22B9D6AB67C482BFF954F93F6A3617EF052E11DD8776BFFB7325A'}
+                        'integrity': '64AE524A2A51581672C65755DE55392C4CCD1793639361A160A5E4C97E55C45A'}
         actual = shift._shift(userParms)
         expected = {'status': 'error: no shift possible'}
         self.assertEqual(actual, expected)
