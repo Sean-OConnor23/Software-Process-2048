@@ -1,5 +1,7 @@
 import random
 import hashlib
+from pickle import FALSE, TRUE
+from test.test_long import SHIFT
 
 def _shift(userParms):
     result = userParms
@@ -42,6 +44,7 @@ def _shift(userParms):
         i = 1
         idk = -1
         skip = 0
+        shiftPoss = False
         for tempVal in grid:
            
             idk = idk + 1
@@ -53,6 +56,7 @@ def _shift(userParms):
                 skip = skip - 1
                 continue
             if (tempVal == 0):
+                shiftPoss = True
                 if (i == 4):
                     i = 1
                 else:
@@ -93,6 +97,10 @@ def _shift(userParms):
             else:
                 column4.append(tempVal)
                 i = 1
+                
+        if (shiftPoss == False):
+            error = {'status': 'error: no shift possible'}
+            return error
         #Grid has now been added into proper columns 
         columns = [column1, column2, column3, column4]
         if (direction == 'up'):
@@ -212,6 +220,7 @@ def _shift(userParms):
         i = 1
         idk = -1
         skip = 0
+        shiftPoss = False
         for tempVal in grid:     
             idk = idk + 1
             tempVal = int(tempVal)
@@ -219,6 +228,7 @@ def _shift(userParms):
                 skip = skip - 1
                 continue
             if (tempVal == 0):
+                shiftPoss = True
                 if (i == 4):
                     i = 1
                 else:
@@ -260,6 +270,9 @@ def _shift(userParms):
             else:
                 row4.append(tempVal)
         rows = [row1, row2, row3, row4]
+        if (shiftPoss == False):
+            error = {'status': 'error: no shift possible'}
+            return error
         #Grid has now been added into proper rows 
         if (direction == 'right'):
             #Perform RIGHT
