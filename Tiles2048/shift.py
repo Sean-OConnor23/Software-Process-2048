@@ -7,7 +7,7 @@ def _shift(userParms):
     search = 'grid'
     tempGrid = ''
     status = 'ok'
-    validNum = [0, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048]
+    validNum = [0, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 1, 6]
     if (not search in result):
         error = {'status': 'error: missing grid'}
         return error
@@ -47,7 +47,7 @@ def _shift(userParms):
             idk = idk + 1
             length = len(grid)
             if (idk == length - 1):
-                idk = idk - 2
+                idk = idk - 1
             tempVal = int(tempVal)
             if (skip != 0):
                 skip = skip - 1
@@ -66,8 +66,6 @@ def _shift(userParms):
                     tempVal = 128
                     skip = 2
             elif (tempVal == 2):
-                if (idk - 1 < len(grid)):
-                    
                     if (int(grid[idk + 1]) == 5):
                         tempVal = 256
                         skip = 2         
