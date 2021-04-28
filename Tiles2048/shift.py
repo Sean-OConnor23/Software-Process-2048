@@ -35,9 +35,9 @@ def _validate(resultIn):
         error = {'status': 'error: invalid score'}
         return error  
     #Tests for valid direction 
-    validDirection = ['down', 'up', 'right', 'left']
+    validDirection = ['down', 'up', 'right', 'left', '']
     if ('direction' in result):
-        if (not result['direction'] in validDirection):
+        if (not result['direction'].lower() in validDirection):
             error = {'status': 'error: invalid direction'}
             return error   
     #Tests for a valid integrity value 
@@ -319,7 +319,7 @@ def _shift(userParms):
     finalResult = {'grid': finalGrid, 'score': score, 'integrity': integrity, 'status': status}
     return finalResult    
 
-temp = {'grid': '000000000000001024', 'score': '0', 'direction': 'down', 'integrity': _calcIntegrity({'grid': '000000000000001024', 'score': '0'})}
+temp = {'grid': '0000000000000010248', 'score': '0','direction': '', 'integrity': _calcIntegrity({'grid': '0000000000000010248', 'score': '0'})}
 _shift(temp)
         
     
