@@ -16,7 +16,7 @@ class shiftTest(unittest.TestCase):
         userParms = {'op': 'shift', 'grid':'0000004024402020', 'score': '4', 'direction': 'up', 
                         'integrity': '2A2EF0D1BEA22B9D6AB67C482BFF954F93F6A3617EF052E11DD8776BFFB7325A'}
         actual = shift._shift(userParms)
-        self.assertEqual(actual.get('score'), '16') 
+        self.assertEqual(actual.get('score'), 16) 
     #Tests to make sure input contains grid value 
     def test_shift_SadPathTest010(self):
         userParms = {'op': 'shift', 'score': '4', 'direction': 'up', 
