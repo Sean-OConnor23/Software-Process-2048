@@ -34,9 +34,10 @@ def _validate(resultIn):
         return error  
     #Tests for valid direction 
     validDirection = ['down', 'up', 'right', 'left', '', None]
-    if (not result['direction'] in validDirection):
-        error = {'status': 'error: invalid direction'}
-        return error   
+    if (result['direction'] in result):
+        if (not result['direction'] in validDirection):
+            error = {'status': 'error: invalid direction'}
+            return error   
     #Tests for a valid integrity value 
     calcInteg = _calcIntegrity(result)
     if (calcInteg != result.get('integrity')):
