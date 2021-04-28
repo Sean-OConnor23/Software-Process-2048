@@ -121,3 +121,4 @@ class shiftTest(unittest.TestCase):
         self.assertEqual(score, '16')  
     
     
+    
