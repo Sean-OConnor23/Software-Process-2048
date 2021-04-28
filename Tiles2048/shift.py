@@ -22,7 +22,8 @@ def _validate(resultIn):
         return error
     #Checks to make sure score is present 
     if (not 'score' in result):
-        error = {'status': 'error: missing score'}      
+        error = {'status': 'error: missing score'} 
+        return error     
     # Tests for valid score   
     try:
         score = int(result['score'])
@@ -42,7 +43,9 @@ def _validate(resultIn):
     calcInteg = _calcIntegrity(result)
     if (calcInteg != result.get('integrity')):
         error = {'status' : 'error: bad integrity value'}
-        return error  
+        return error
+    
+    return 'pass'  
      
 #Splitting the grid into respective values 
 #Only allowed values: 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2 
@@ -252,7 +255,9 @@ def _checkStatus(gridIn):
 def _shift(userParms):
     userInput = userParms
     #Checks and handles the errors 
-    _validate(userInput)
+    validCheck = _validate(userInput)
+    if (validCheck != 'pass'):
+        return validCheck
     #Splits the grid into respective objects 
     gridValues = _splitGrid(userInput['grid'])
     #Grabs direction value from input 
