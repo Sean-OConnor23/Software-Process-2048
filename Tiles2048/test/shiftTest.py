@@ -29,7 +29,7 @@ class shiftTest(unittest.TestCase):
         userParms = {'op': 'shift', 'grid':'002000002000', 'score': '0', 'direction': 'down', 
                         'integrity': '7CD5E3DEAB08FCAE8F64433DC4A63CC922571EBF60EE1D1938ADCD415FB760E5'}
         actual = shift._shift(userParms)
-        expected = {'status': 'error: invalid grid'}
+        expected = {'status': 'error: bad integrity value'}
         self.assertEqual(actual, expected)
     #Tests for an invalid grid value 
     def test_shift_SadPathTest030(self):
