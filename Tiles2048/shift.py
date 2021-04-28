@@ -24,7 +24,10 @@ def _validate(resultIn):
     if (not 'score' in result):
         error = {'status': 'error: missing score'} 
         return error     
-    # Tests for valid score   
+    # Tests for valid score 
+    if (not 'score' in result):
+        error = {'status': 'error: missing score'}
+        return error  
     try:
         score = int(result['score'])
         if (score % 2 != 0 or score < 0):
