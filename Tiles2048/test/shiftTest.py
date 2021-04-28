@@ -113,5 +113,11 @@ class shiftTest(unittest.TestCase):
         self.assertEqual(score, '9600')
         
         
+    def test_shift_HappyPathTest060(self):
+        userParms = {'op': 'shift', 'grid':'0000004024402020', 'score': '4', 
+                    'integrity': '2A2EF0D1BEA22B9D6AB67C482BFF954F93F6A3617EF052E11DD8776BFFB7325A'}
+        actual = shift._shift(userParms)
+        score = str(actual.get('score'))
+        self.assertEqual(score, '16')  
     
     
