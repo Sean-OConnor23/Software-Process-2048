@@ -1,7 +1,6 @@
 import random
 import hashlib
-from pickle import FALSE, TRUE
-from test.test_long import SHIFT
+
 
 def _shift(userParms):
     result = userParms
@@ -392,4 +391,3 @@ def _checkWin(numberIn):
         return 'win'
     else:
         return 'ok'
-        
