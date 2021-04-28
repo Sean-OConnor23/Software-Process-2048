@@ -256,7 +256,7 @@ def _shift(userParms):
     #Splits the grid into respective objects 
     gridValues = _splitGrid(userInput['grid'])
     #Grabs direction value from input 
-    if (not userInput['direction'] in userInput):
+    if (not 'direction' in userInput):
         direction = 'down'
     else: 
         direction = userInput['direction']
