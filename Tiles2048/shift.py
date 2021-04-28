@@ -88,7 +88,11 @@ def _splitGrid(gridIn):
             shift = shift + 2
             continue 
         #Check for values of length 1
-        gridObj = grid[shift]
+        if (shift < len(grid)):
+            gridObj = grid[shift]           
+        else:
+            return {'status': 'error: invalid grid'}
+        
         if (gridObj in validValues):
             gridValues.append(int(gridObj))
             FinalCheck = FinalCheck + gridObj
@@ -261,11 +265,14 @@ def _shift(userParms):
         return validCheck
     #Splits the grid into respective objects 
     gridValues = _splitGrid(userInput['grid'])
+    if (len(gridValues) != 16):
+        return gridValues
     #Grabs direction value from input 
-    if (not 'direction' in userInput):
+    if (not 'direction' in userInput or userInput['direction'] == ''):
         direction = 'down'
     else: 
-        direction = userInput['direction']
+        direction = userInput['direction'].lower()
+        
     #Grabs the score and converts to integer
     score = int(userInput['score'])
     
@@ -312,6 +319,7 @@ def _shift(userParms):
     finalResult = {'grid': finalGrid, 'score': score, 'integrity': integrity, 'status': status}
     return finalResult    
 
-        
+temp = {'grid': '000000000000001024', 'score': '0', 'direction': 'down', 'integrity': _calcIntegrity({'grid': '000000000000001024', 'score': '0'})}
+_shift(temp)
         
     
