@@ -33,7 +33,7 @@ def _validate(resultIn):
         error = {'status': 'error: invalid score'}
         return error  
     #Tests for valid direction 
-    validDirection = ['down', 'up', 'right', 'left', '', None]
+    validDirection = ['down', 'up', 'right', 'left']
     if (result['direction'] in result):
         if (not result['direction'] in validDirection):
             error = {'status': 'error: invalid direction'}
