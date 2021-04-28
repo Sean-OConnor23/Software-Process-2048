@@ -102,13 +102,13 @@ class shiftTest(unittest.TestCase):
         actual = shift._shift(userParms)
         score = str(actual.get('status'))
         self.assertEqual(score, 'lose')
-        
+                
     def test_shift_HappyPathTest050(self):
-        userParms = {'op': 'shift', 'grid':'2481632641282562481632641280', 'score': '9600', 'direction': 'down', 
-                    'integrity': 'CBD6F924B76E41871F106ABDE80AF9BA71350A53B0A148F26F16AF14CA5F6B06'}
+        userParms = {'op': 'shift', 'grid':'2222444488881616160', 'score': '9600', 'direction': 'up', 
+                    'integrity': '66457746F0596CEE48B4FA4FA9C57A8A56A917F5B42F2600F12CD4266B9098BE'}
         actual = shift._shift(userParms)
-        score = str(actual.get('status'))
-        self.assertEqual(score, 'lose')
+        score = str(actual.get('score'))
+        self.assertEqual(score, '9600')
         
         
     
