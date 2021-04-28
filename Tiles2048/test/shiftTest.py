@@ -75,3 +75,24 @@ class shiftTest(unittest.TestCase):
         actual = shift._shift(userParms)
         score = str(actual.get('score'))
         self.assertEqual(score, '9688') 
+        
+    def test_shift_SadPathTest080(self):
+        userParms = {'op': 'shift', 'grid':'002000002000', 'score': '-7', 'direction': 'down', 
+                        'integrity': '7CD5E3DEAB08FCAE8F64433DC4A63CC922571EBF60EE1D1938ADCD415FB760E5'}
+        actual = shift._shift(userParms)
+        expected = {'status': 'error: invalid score'}
+        self.assertEqual(actual, expected)
+        
+    def test_shift_SadPathTest090(self):
+        userParms = {'op': 'shift', 'grid':'002000002000', 'score': 'h', 'direction': 'down', 
+                        'integrity': '7CD5E3DEAB08FCAE8F64433DC4A63CC922571EBF60EE1D1938ADCD415FB760E5'}
+        actual = shift._shift(userParms)
+        expected = {'status': 'error: invalid score'}
+        self.assertEqual(actual, expected)
+     def test_shift_SadPathTest100(self):
+        userParms = {'op': 'shift', 'grid':'002000002000', 'score': '', 'direction': 'down', 
+                        'integrity': '7CD5E3DEAB08FCAE8F64433DC4A63CC922571EBF60EE1D1938ADCD415FB760E5'}
+        actual = shift._shift(userParms)
+        expected = {'status': 'error: missing score'}
+        self.assertEqual(actual, expected)   
+    
