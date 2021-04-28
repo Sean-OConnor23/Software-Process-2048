@@ -33,10 +33,7 @@ def _validate(resultIn):
         error = {'status': 'error: invalid score'}
         return error  
     #Tests for valid direction 
-    if (not 'direction' in result):
-        error = {'status': 'error: missing direction'}
-        return error
-    validDirection = ['down', 'up', 'right', 'left', '']
+    validDirection = ['down', 'up', 'right', 'left', '', None]
     if (not result['direction'] in validDirection):
         error = {'status': 'error: invalid direction'}
         return error   
@@ -257,8 +254,11 @@ def _shift(userParms):
     _validate(userInput)
     #Splits the grid into respective objects 
     gridValues = _splitGrid(userInput['grid'])
-    #Grabs direction value from input  
-    direction = userInput['direction']
+    #Grabs direction value from input 
+    if (not userInput['direction'] in userInput):
+        direction = 'down'
+    else: 
+        direction = userInput['direction']
     #Grabs the score and converts to integer
     score = int(userInput['score'])
     
