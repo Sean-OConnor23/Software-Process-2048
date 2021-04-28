@@ -231,16 +231,16 @@ def _checkStatus(gridIn):
         else:
             value = grid[randSpot]
             #Check to right
-            if (grid[randSpot + 1] != None and grid[randSpot + 1] == value):
+            if (randSpot + 1 <= 15 and grid[randSpot + 1] == value):
                 status = 'ok'
             #Check to left
-            elif (grid[randSpot - 1] != None and grid[randSpot - 1] == value):
+            elif (randSpot - 1 >= 0 and grid[randSpot - 1] == value):
                 status = 'ok'
             #Check down
-            elif (grid[randSpot + 4] != None and grid[randSpot + 4] == value):
+            elif (randSpot + 4 <= 15 and grid[randSpot + 4] == value):
                 status = 'ok'
             #Check up
-            elif (grid[randSpot - 4] != None and grid[randSpot - 4] == value):
+            elif (randSpot - 4 >= 0 and grid[randSpot - 4] == value):
                 status = 'ok'
             else:
                 status = 'lose'
