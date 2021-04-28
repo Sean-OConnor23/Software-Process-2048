@@ -1,7 +1,5 @@
 import random
 import hashlib
-from Tiles2048 import status
-
 
 #Calculate integrity in separate grid. Helps for testing purposes
 def _calcIntegrity(result):
