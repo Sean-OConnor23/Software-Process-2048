@@ -87,7 +87,7 @@ class shiftTest(unittest.TestCase):
         userParms = {'op': 'shift', 'grid':'002000002000', 'score': '', 'direction': 'down', 
                         'integrity': '7CD5E3DEAB08FCAE8F64433DC4A63CC922571EBF60EE1D1938ADCD415FB760E5'}
         actual = shift._shift(userParms)
-        expected = {'status': 'error: missing score'}
+        expected = {'status': 'error: invalid score'}
         self.assertEqual(actual, expected)   
                 
     def test_shift_HappyPathTest040(self):
