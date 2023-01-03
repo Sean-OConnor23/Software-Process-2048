@@ -1,7 +1,7 @@
 import sys 
 import os
 from flask import Flask, request
-import Tiles2048.dispatch as dispatch
+import dispatch as dispatch
 
 app = Flask(__name__)
 
